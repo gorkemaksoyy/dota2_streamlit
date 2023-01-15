@@ -1,6 +1,7 @@
 #pip install streamlit
 import pandas as pd
 import streamlit as st
+from openpyxl import Workbook
 rec_list = pd.read_excel("tavsiye_listesi.xlsx")
 rec_list.index = rec_list["Item_Names"]
 rec_list.drop("Item_Names", axis=1, inplace=True)
