@@ -1,7 +1,7 @@
-#pip install streamlit
 import pandas as pd
 import streamlit as st
 rec_list = pd.read_csv("tavsiyeler.csv")
+rec_list.drop("Unnamed: 0", axis=1, inplace=True)
 rec_list.index = rec_list["Item_Names"]
 rec_list.drop("Item_Names", axis=1, inplace=True)
 hero_list = list(rec_list.columns)
@@ -18,6 +18,6 @@ if hero_chosen:
     item_chosen = st.selectbox("Eşya seçiniz", item_list_suggestions)
 
 if item_chosen:
-    recommendation = list(rec_list[hero_chosen][item_chosen])
+    recommendation = list(rec_list.loc[rec_list.index == item_chosen,"hero_chosen"])
     for item in recommendation:
         st.write(item)
