@@ -6,6 +6,8 @@ rec_list.index = rec_list["Item_Names"]
 rec_list.drop("Item_Names", axis=1, inplace=True)
 hero_list = list(rec_list.columns)
 item_list = list(rec_list.index)
+hero_chosen = None
+item_chosen = None
 hero_chosen = st.selectbox("Hero seçiniz", hero_list) #sidebar.selectbox ile yan tarafta kutucuk açılabilir
 #st.columns sayfayı bölüyor, col1, col2 = st.columns(2) sonrada with col1: diye başlıyoruz
 
