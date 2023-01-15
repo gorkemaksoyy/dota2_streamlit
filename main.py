@@ -18,6 +18,5 @@ if hero_chosen:
     item_chosen = st.selectbox("Eşya seçiniz", item_list_suggestions)
 
 if item_chosen:
-    recommendation = list(rec_list.loc[rec_list.index == item_chosen,hero_chosen])
-    for item in recommendation:
-        st.write(item)
+    recommendation = rec_list.loc[rec_list.index == item_chosen,hero_chosen][0][1:-1]
+    st.write(recommendation)
