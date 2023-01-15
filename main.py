@@ -1,5 +1,5 @@
 #pip install streamlit
-$ pip install openpyxl
+pip install openpyxl
 import pandas as pd
 import streamlit as st
 from openpyxl import Workbook
