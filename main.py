@@ -29,4 +29,4 @@ if item_chosen:
         new_elem = elem[2:-1]
         fin_list.append(new_elem)
     for elem in fin_list:
-        st.write(fin_list)
+        st.write(elem)
