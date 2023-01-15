@@ -9,15 +9,15 @@ item_list = list(rec_list.index)
 hero_chosen = st.selectbox("Hero seçiniz", hero_list) #sidebar.selectbox ile yan tarafta kutucuk açılabilir
 #st.columns sayfayı bölüyor, col1, col2 = st.columns(2) sonrada with col1: diye başlıyoruz
 
+if hero_chosen:
+    item_list_suggestions = []
+    for index in range(0, len(rec_list.index)):
+        if rec_list[hero_chosen][index] == rec_list[hero_chosen][index]:
+            item_list_suggestions.append(item_list[index])
+    len(item_list_suggestions)
+    item_chosen = st.selectbox("Eşya seçiniz", item_list_suggestions)
 
-item_list_suggestions = []
-for index in range(0, len(rec_list.index)):
-    if rec_list["Anti-Mage"][index] == rec_list["Anti-Mage"][index]:
-        item_list_suggestions.append(item_list[index])
-len(item_list_suggestions)
-item_chosen = st.selectbox("Eşya seçiniz", item_list_suggestions)
-
-
-recommendation = list(rec_list.loc[rec_list.index == item_chosen,"hero_chosen"])
-for item in recommendation:
-    st.write(item)
+if item_chosen:
+    recommendation = list(rec_list.loc[rec_list.index == item_chosen,hero_chosen])
+    for item in recommendation:
+        st.write(item)
