@@ -19,4 +19,14 @@ if hero_chosen:
 
 if item_chosen:
     recommendation = rec_list.loc[rec_list.index == item_chosen,hero_chosen][0][1:-1]
-    st.write(recommendation)
+    new_list = recommendation.split(",")
+    fin_list = []
+    for index, elem in enumerate(new_list):
+        if index == 0:
+            new_elem = elem[1:-1]
+            fin_list.append(new_elem)
+    else:
+        new_elem = elem[2:-1]
+        fin_list.append(new_elem)
+    for elem in fin_list:
+        st.write(fin_list)
