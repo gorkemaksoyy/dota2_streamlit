@@ -25,8 +25,8 @@ if item_chosen:
         if index == 0:
             new_elem = elem[1:-1]
             fin_list.append(new_elem)
-    else:
-        new_elem = elem[2:-1]
-        fin_list.append(new_elem)
+        else:
+            new_elem = elem[2:-1]
+            fin_list.append(new_elem)
     for elem in fin_list:
         st.write(elem)
